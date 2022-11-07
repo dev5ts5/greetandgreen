@@ -1,0 +1,175 @@
+/**********************************************************
+//////////////////    client dashboard page    ////////////////////////
+**********************************************************/
+
+.client-dashboard{
+       margin-top: 0;
+       margin-bottom: 30px;
+    .green_dashboard_navigation {
+        margin-top: 52px;
+
+        @include respond-to ($screen500){
+            margin: 0;
+        }
+    }
+
+    .dashboard_section{
+        margin-top: 68px;
+
+        @include respond-to ($screen500){
+            margin-top: 11px;
+        }
+
+        .dashboard_details {
+            display: flex;
+            margin-bottom: 50px;
+
+            @include respond-to ($screen500){
+                margin-bottom: 15px;
+            }
+
+            .das_user_name {
+                margin-left: 15px;
+
+                @include respond-to($screen500){
+                    margin: 10px 0 0 11px;
+                }
+
+                .main-title {
+                    margin-bottom: 10px;
+                    line-height: 1.1;
+                    text-align: left;
+                    text-transform: capitalize;
+                    color: $color10;
+
+                    @include respond-to($screen500){
+                        margin-bottom: 2px;
+                    }
+
+                }
+                .das_user_name {
+                    margin-left: 15px;
+                    @include respond-to($screen500){
+                        margin: 10px 0 0 11px;
+                    }
+                }
+                
+            }
+        }
+        .client-dashboard-card {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+
+            @include respond-to ($screen600){
+                margin: -10px;
+                justify-content: center;
+            }
+
+            
+        }
+        .dashboard_inner {
+            max-width: 33.33%;
+            flex: 0 0 33.33%;
+            padding: 15px;
+
+            @include respond-to ($screen991){
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+
+            @include respond-to ($screen600){
+                max-width: 320px;
+                flex: 0 0 320px;
+                padding: 10px;
+            }
+
+            
+        }
+    }
+}
+
+.dashborad_card {
+    background-color: $bgcolor3;
+    box-shadow: 0px 2px 10px rgba($bgcolor4, 0.1);
+    border-radius: 20px;
+    .card_heading {
+        background-color: $bgcolor1;
+        border-radius: 20px 20px 0px 0px;
+        padding: 14px 24px;
+        .card-title {
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0.48px;
+            color: $color3;
+            font-family: $primary-font;
+        }
+    }
+    .card_content {
+        padding: 24px 17px;
+   
+    }
+    .card_text {
+        display: flex;
+        align-items: center;
+        margin: 0 0 39px;
+
+        .card-des{
+            font-weight: $font-semibold;
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0.48px;
+            color: $color1;
+            span {
+                text-transform: uppercase;
+                display: block;
+            }
+        }
+
+        &::before {
+            content: '';
+            background: $bgcolor5;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            -webkit-mask-size: contain;
+            margin: 0 10px 0 0;
+        }
+
+        &.wishlish-icon {
+            &::before {
+                -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='49' height='44' viewBox='0 0 49 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.1875 0.125C28.3119 0.125 24.5 5.08875 24.5 5.08875C24.5 5.08875 20.6881 0.125 13.8125 0.125C6.59725 0.125 0.75 5.97225 0.75 13.1875C0.75 23.0936 12.416 32.6934 15.6674 35.7262C19.4128 39.2175 24.5 43.7062 24.5 43.7062C24.5 43.7062 29.5873 39.2175 33.3326 35.7262C36.584 32.6934 48.25 23.0936 48.25 13.1875C48.25 5.97225 42.4028 0.125 35.1875 0.125Z' fill='%23BB6F58'/%3E%3C/svg%3E%0A");
+                width: 47px;
+                height: 43px;
+            }   
+        }
+        &.projects-icon {
+            &::before{
+                -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.1998 0L0 13.2L8.27996 21.4801L11.3909 18.3648L6.22179 13.2L13.1998 6.22188L18.3689 11.391L21.4798 8.28008L13.1998 0ZM36.1104 0C35.5475 0 34.984 0.214431 34.555 0.644531L30.7996 4.4L39.5994 13.2L43.3549 9.44453C44.215 8.58433 44.215 7.19159 43.3549 6.33359L37.6659 0.644531C37.2358 0.214431 36.6733 0 36.1104 0ZM27.4996 7.7L2.19997 33V41.8H10.9998L36.2995 16.5L27.4996 7.7ZM35.7194 22.5199L32.6085 25.6309L37.7776 30.8L30.7996 37.7781L25.6348 32.609L22.5196 35.7199L30.7996 44L43.9994 30.8L35.7194 22.5199Z' fill='%23BB6F58'/%3E%3C/svg%3E%0A");
+                width: 44px;
+                height: 44px;
+            }
+        }
+        &.sending-icon{
+            &::before{
+               -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='46' height='46' viewBox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M46 0L0 16.7244L29.2756 46L46 0ZM38.3094 7.69062L27.4203 37.64L19.7297 29.9494L31.3645 14.6355L16.0506 26.2703L8.35996 18.5797L38.3094 7.69062Z' fill='%23BB6F58'/%3E%3C/svg%3E%0A");
+               width: 46px;
+               height: 46px;
+            }
+        }
+    }
+}
+
+.dashboard_container{
+    @include respond-to ($minscreen992) {
+        max-width: 990px;
+    }
+}
+
+.user_line {
+    font-weight: $font-regular;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.48px;
+    color: #BDBDBD;
+    font-family: $primary-font;
+}   

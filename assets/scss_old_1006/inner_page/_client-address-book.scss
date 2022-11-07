@@ -1,0 +1,298 @@
+/**********************************************************
+//////////////////    client address book page    ////////////////////////
+**********************************************************/
+
+
+// client address book
+.client-address-main {
+    margin-top: 16px;
+    margin-bottom: 50px;
+
+    @include respond-to ($screen991) {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .main-title {
+        text-align: left;
+        margin-bottom: 30px;
+
+        @include respond-to ($screen991) {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+
+    .add-contact-cover {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 34px;
+
+        @include respond-to ($screen991) {
+            flex-wrap: wrap;
+            max-width: 216px;
+            margin: 0 auto 22px;
+        }
+
+        .theme-btn {
+            margin-right: 12px;
+
+            @include respond-to ($screen991) {
+                margin-right: 0;
+                margin-bottom: 9px;
+                width: 100%;
+                padding: 8px;
+            }
+        }
+
+        .importer-label {
+            font-weight: $font-regular;
+            font-size: 12px;
+            line-height: 1.5;
+            letter-spacing: 0.48px;
+            color: $color10;
+        }
+    }
+}
+
+// address book table
+
+.address-table-main {
+    background: $bgcolor3;
+    border: 1px solid rgba($bgcolor4, 0.06);
+    box-shadow: 0px 4px 20px rgba($bgcolor4, 0.25);
+    border-radius: 8px;
+
+    @include respond-to ($screen991) {
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+    }
+}
+.address-book-table {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to ($screen991) {
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+        box-shadow: inset -4px -4px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    th {
+        font-weight: $font-semibold;
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: 0.48px;
+        color: $color1;
+        text-align: left;
+        padding: 20px 10px 4px 15px;
+        border-bottom: 1px solid rgba($bgcolor4, 0.06);
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+
+    td {
+        font-weight: $font-regular;
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: 0.48px;
+        color: $color10;
+        text-align: left;
+        margin: 13px 0 13px 0;
+        padding: 0 5px 0 15px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+
+        a {
+            color: $color10;
+            font-size: 12px;
+
+            &:hover {
+                color: $color5;
+            }
+        }
+    }
+
+    tr {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .table-tbody {
+        tr {
+            &:first-child {
+                td {
+                    margin-top: 17px;
+                }
+            }
+            &:last-child {
+                td {
+                    margin-bottom: 17px;
+                }
+            }
+        }
+    }
+
+    .information-icon {
+        &::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            margin-left: 6px;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 12px;
+            background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 0C2.688 0 0 2.688 0 6C0 9.312 2.688 12 6 12C9.312 12 12 9.312 12 6C12 2.688 9.312 0 6 0ZM6.6 10.2H5.4V9H6.6V10.2ZM7.842 5.55L7.302 6.102C6.87 6.54 6.6 6.9 6.6 7.8H5.4V7.5C5.4 6.84 5.67 6.24 6.102 5.802L6.846 5.046C7.068 4.83 7.2 4.53 7.2 4.2C7.2 3.54 6.66 3 6 3C5.34 3 4.8 3.54 4.8 4.2H3.6C3.6 2.874 4.674 1.8 6 1.8C7.326 1.8 8.4 2.874 8.4 4.2C8.4 4.728 8.184 5.208 7.842 5.55Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");
+        }
+    }
+
+    .table-maile {
+        max-width: 210px;
+        flex: 0 0 210px;
+    }
+    .table-nom {
+        max-width: 80px;
+        flex: 0 0 80px;
+    }
+    .table-prenom {
+        max-width: 85px;
+        flex: 0 0 85px;
+    }
+    .table-societe, .table-ville {
+        max-width: 95px;
+        flex: 0 0 95px;
+    }
+    .table-address1 {
+        max-width: 190px;
+        flex: 0 0 190px;
+    }
+    .table-address2 {
+        max-width: 215px;
+        flex: 0 0 215px;
+    }
+    .table-cp {
+        max-width: 75px;
+        flex: 0 0 75px;
+    }
+    .table-pays {
+        max-width: 120px;
+        flex: 0 0 120px;
+    }
+}
+
+.address-table-tfoot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px 10px 15px;
+    border-top: 1px solid rgba($bgcolor4, 0.06);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+
+    @include respond-to ($screen991) {
+        justify-content: flex-end;
+        padding: 18px 15px;
+    }
+
+    .form-group {
+        margin-left: 0;
+        max-width: fit-content;
+
+        .projet-select {
+            margin-bottom: 0;
+            background-size: 12px;
+            color: #878173;
+            font-weight: $font-regular;
+            font-size: 12px;
+            border: none;
+            padding: 0;
+            padding-right: 35px;
+        }
+
+        @include respond-to ($screen991) {
+            display: none;
+        }
+    }
+
+    .table-bottom-btn {
+        margin-top: 0;
+        padding-right: 25px;
+
+        .page-list {
+            font-weight: $font-regular;
+            font-size: 12px;
+            color: #878173;
+        }
+
+        .slick-btn {
+            width: 8px;
+            height: 12px;
+            margin-left: 21px;
+            background: #878173;
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: contain;
+            -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.589844 10.59L5.16984 6L0.589844 1.41L1.99984 0L7.99984 6L1.99984 12L0.589844 10.59Z' fill='%23878173'/%3E%3C/svg%3E%0A");
+
+            &:hover {
+                background: $bgcolor1;
+            }
+
+            &.disabled {
+                background: #E0E0E0;
+            }
+
+            &:last-child {
+                margin-left: 44px;
+            }
+        }
+
+        @include respond-to ($screen991) {
+            display: none;
+        }
+    }
+
+    .dashboard-table-footer {
+        @include respond-to ($minscreen992) {
+            display: none;
+        }
+
+        .table-footer-icon {
+            display: flex;
+            align-items: center;
+
+            .download-icon {
+                width: 20px;
+                height: 20px;
+                font-size: 0;
+                margin-right: 17px;
+                background-color: $bgcolor1;
+                -webkit-mask-position: center;
+                -webkit-mask-repeat: no-repeat;
+                -webkit-mask-size: cover;
+                -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0C8.448 0 8 0.448 8 1V9H4L10 15L16 9H12V1C12 0.448 11.552 0 11 0H9ZM0 18V20H20V18H0Z' fill='%23356A61'/%3E%3C/svg%3E%0A");
+
+                &:hover {
+                    background-color: $bgcolor5;
+                }
+            }
+
+            .print-icon {
+                @extend .download-icon;
+                height: 18px;
+                margin-right: 0;
+                -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='20' height='18' viewBox='0 0 20 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0V3H16V0H4ZM3 5C1.35 5 0 6.35 0 8V14H4V18H16V14H20V8C20 6.35 18.65 5 17 5H3ZM17 7C17.6 7 18 7.4 18 8C18 8.6 17.6 9 17 9C16.4 9 16 8.6 16 8C16 7.4 16.4 7 17 7ZM6 11H14V16H6V11Z' fill='%23356A61'/%3E%3C/svg%3E%0A");
+            }
+        }
+    }
+}

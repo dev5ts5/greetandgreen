@@ -1,0 +1,55 @@
+<?php  session_start();
+$args['inner_products'][0] = $args['main_product'];
+$args['inner_products'][1] = $args['main_product'];
+$args['inner_products'][2] = $args['main_product'];
+
+// echo "<pre>";
+// print_r($args); 
+// echo "</pre>";
+
+// die();
+?>
+<div onclick="open_drop_down_for_products()" id="invois_select_for_product_<?php echo $args['main_product']['id']; ?>" class="invois_select_for_product">
+	<div class="invois_select_image_display" >
+		<img src="<?php echo $args['main_product']['url']; ?>" alt="invois_product_image" />
+	</div>
+	<div class="invois_select_name" >
+		<span> <?php echo $args['main_product']['name']; ?> </span>
+	</div>
+	<span id="invois_select_for_product_arraw_id" class="invois_select_for_product_arraw" >
+								
+	</span>
+</div>
+<div id="invois_show_all_products_drop_down_id" class="invois_show_all_products_drop_down" >
+<?php
+
+foreach ($args['inner_products'] as $value) {
+	if(isset($args['page']))
+	{
+		if($args['page'] == "tracking")
+		{
+			?>
+				<div onclick="change_product_from_dropdown_for_tracking('<?php echo $value['id']; ?>')" class="invois_select_for_product" id="invois_select_for_product_<?php echo array_search($value,$args['inner_products'])+1; ?>">		
+			<?php
+		}
+	}
+	else
+	{
+		?>
+			<div onclick="change_product_from_dropdown('<?php echo $value['id']; ?>')" class="invois_select_for_product" id="invois_select_for_product_<?php echo $value['id']; ?>">
+		<?php
+	}
+    ?>
+	
+    
+		<div class="invois_select_image_display" >
+			<img src="<?php echo $value['url']; ?>" alt="invois_product_image" />
+		</div>
+		<div class="invois_select_name" >
+			<span> <?php echo $value['name']; ?> </span>
+		</div>
+	</div>
+    <?php
+}
+?>
+</div>
