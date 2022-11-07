@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * The header for our theme.
+ *
+ * @package Botega_Scratch_Theme
+ *
+ */
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+  <header class="header user-profile">
+    <div class="top-head">
+      <div class="container">
+
+        <div class="country">
+          <select class="coun-title">
+            <option value="1">FRANÇAIS</option>
+            <option value="2">FRANÇAIS</option>
+            <option value="3">FRANÇAIS</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-head">
+      <div class="container">
+        <div class="bottom-head-row">
+          <div class="bottom-head-col main-logo">
+            <a href="https://dev.greetandgreen.com/" class="main_logo" title="Greet & Green">
+              <img src="https://dev.greetandgreen.com/wp-content/uploads/2022/06/logo.svg" alt="Greet & Green">
+              <span class="font-none">Greet & Green</span>
+            </a>
+          </div>
+          <div class="bottom-head-col top-menu cs-popup" data-popup="togglemenu">
+            <div class="head-menu">
+              <nav class="main-menu">
+                <ul class="menu-top">
+
+                  <?php wp_nav_menu(array('theme_location' => 'max_mega_menu_1')); ?>
+                </ul>
+              </nav>
+            </div>
+            <div class="account-btn">
+                <a href="#" class="theme-btn-secound head-btn menu-b2b-btn" title="B2B">B2B</a>
+
+                <?php
+                if( is_user_logged_in() ){
+                  $user = wp_get_current_user();
+                  $user_id = $user->ID;
+                  $attachment_id = get_user_meta($user_id, 'image', true);
+                  $original_image_url = wp_get_attachment_url($attachment_id);
+                  $my_account_menu =wc_get_account_menu_items();
+                  
+                  
+                  ?>
+                  <div class="user_img theme-img popup-opener" data-popup-id="togglemenu">
+                  <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="user_profile">
+                    <img src="<?php echo $original_image_url; ?>" alt="user-icon">
+                  </a>
+                </div>
+                <div class="menu_items user-dropdown">
+                  <ul class="menu-top">
+
+                  
+                <?php
+                  $site_url =  get_site_url();
+                  foreach($my_account_menu as $key => $value){
+                    ?>
+                      <li class="my_account_menu_item menu-list <?php echo $key; ?>"><a href='<?php echo $site_url."/mon-compte/".$key; ?>'><?php echo $value; ?></a></li>
+                    <?php
+                  }
+                ?>
+                </ul>
+            </div>
+                  <?php
+                  
+              } else {
+                  ?>
+                  <div class="user_login"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="theme-btn-secound head-btn menu-b2b-btn" title="M’INSCRIRE / ME CONNECTER">M’INSCRIRE / ME CONNECTER</a></div>
+                  <?php
+              }
+                
+                ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">

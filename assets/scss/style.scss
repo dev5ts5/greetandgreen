@@ -1,0 +1,53 @@
+// /**
+//  * All Scss File.
+//  **/
+//
+// 567
+//
+//  Default Scss File
+//  _____________________________________________
+
+@import "inner_scss/_variables"; // Variables scss
+@import "inner_scss/_font"; // font file
+@import "inner_scss/_mixin"; // All mixin scss
+@import "inner_scss/_commun"; // Commun scss
+@import "inner_scss/_select2"; // select2 module scss
+
+
+
+//
+//  Default Pages & section
+//  _____________________________________________
+
+@import "inner_scss/_header"; // page header
+@import "inner_scss/_footer"; // page footer
+
+
+
+//
+//  Project Inner Pages9305+4
+//  _____________________________________________
+
+@import "inner_page/_home-page"; // index page
+@import "inner_page/_category"; // category page
+@import "inner_page/_product"; // product page
+@import "inner_page/_single-elements"; // single elements page
+@import "inner_page/_template-content-simple"; // template content simple page
+@import "inner_page/_client-dashboard"; // client dashboard page
+@import "inner_page/_client-wishlist"; // client wishlist page
+@import "inner_page/_client-shipping"; // client shipping page
+@import "inner_page/_custom_tool_carte"; // custom tool carte page
+@import "inner_page/_client-tracking-returns"; // client tracking returns page
+@import "inner_page/_client-address-book"; // client address book page
+@import "inner_page/_client-edit-profile"; // client edit profile page
+@import "inner_page/_client-payment"; // client payment page
+@import "inner_page/_client-commandes-factures"; // client commandes factures page
+@import "inner_page/_faq"; // faq page
+@import "inner_page/_contact"; // contact page
+
+//
+//  Plugins Scss
+//  _____________________________________________
+
+@import "inner_scss/_slick"; // Slick scss
+    

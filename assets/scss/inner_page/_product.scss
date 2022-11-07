@@ -1,0 +1,538 @@
+/**********************************************************
+//////////////////    product page    ////////////////////////
+**********************************************************/
+
+
+// product details
+.product-section {
+    margin-top: 18px;
+    margin-bottom: 62px;
+
+    @include respond-to ($screen991) {
+        margin-bottom: 23px;
+    }
+
+    .product-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -14px;
+    }
+
+    .product-left {
+        max-width: 51.1%;
+        flex: 0 0 51.1%;
+        padding: 0 14px;
+
+        @include respond-to ($screen991) {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+
+        .product-left-cover {
+            text-align: center;
+        }
+
+        .product-main-img {
+            position: relative;
+
+            .product-image {
+                padding-top: 100%;
+                border-radius: 6px;
+            }
+
+            .product-top-tag {
+                @include respond-to ($minscreen992) {
+                    display: none;
+                }
+            }
+
+            .speaker-btn {
+                font-size: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: $bgcolor1;
+                position: absolute;
+                bottom: 14px;
+                right: 22px;
+                cursor: pointer;
+                background-position: center;
+                background-size: 22px;
+                background-repeat: no-repeat;
+                background-image: url("data:image/svg+xml,%0A%3Csvg width='23' height='19' viewBox='0 0 23 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.7652 0.555664L4.83929 6.48159H2.86398C1.77262 6.48159 0.888672 7.36554 0.888672 8.4569V10.4322C0.888672 11.5236 1.77262 12.4075 2.86398 12.4075H4.83929L10.7652 18.3334V0.555664ZM19.1448 1.06492L17.7482 2.46153C21.6138 6.32707 21.6137 12.5631 17.7482 16.4276L19.1448 17.8242C23.7654 13.2047 23.7652 5.68531 19.1448 1.06492ZM16.3516 3.85813L14.955 5.25474C17.2779 7.57761 17.2777 11.3125 14.955 13.6344L16.3516 15.031C19.4295 11.9543 19.4293 6.93575 16.3516 3.85813ZM13.5584 6.65134L12.1618 8.04795C12.9422 8.82828 12.9422 10.0608 12.1618 10.8412L13.5584 12.2397C15.0932 10.705 15.0932 8.18607 13.5584 6.65134Z' fill='white'/%3E%3C/svg%3E%0A");
+
+                &:hover {
+                    background-color: $bgcolor5;
+                }
+            }
+        }
+
+        .theme-btn-secound {
+            position: unset;
+            font-weight: $font-semibold;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+            letter-spacing: 0.48px;
+            color: $color1;
+            width: auto;
+            height: auto;
+            border: 2px solid $bordercolor1;
+            background-color: transparent;
+            border-radius: 8px;
+            margin: 20px 9px 0;
+
+            &:hover {
+                background-color: $bgcolor1;
+                color: $color3;
+            }
+        }
+
+        .pro_btn {
+            text-align: center;
+        }
+    }
+
+    .product-right {
+        max-width: 48.9%;
+        flex: 0 0 48.9%;
+        padding: 0 14px;
+
+        @include respond-to ($screen991) {
+            max-width: 100%;
+            flex: 0 0 100%;
+            margin-top: 8px;
+        }
+
+        .main-title {
+            text-align: left;
+            margin-bottom: 18px;
+
+            @include respond-to ($screen991) {
+                margin-bottom: 13px;
+            }
+        }
+
+        .product-tag {
+            margin-bottom: 22px;
+
+            @include respond-to ($screen991) {
+                display: none;
+            }
+        }
+
+        .product-dec {
+            font-weight: $font-regular;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.48px;
+            color: $color2;
+            margin-bottom: 30px;
+
+            @include respond-to ($screen991) {
+                &.drop-icon {
+                    position: relative;
+                    padding-right: 22px;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all;
+                    margin-bottom: 8px;
+
+                    &::after {
+                        content: '';
+                        width: 17px;
+                        height: 10px;
+                        position: absolute;
+                        right: 0;
+                        top: 7px;
+                        background-position: center center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-image: url("data:image/svg+xml,%0A%3Csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.90283 0L8.09717 6.18084L14.2915 0L16.1943 1.90283L8.09717 10L0 1.90283L1.90283 0Z' fill='%23356A61'/%3E%3C/svg%3E%0A");
+                    }
+
+                    &.active {
+                        overflow: unset;
+                        display: block;
+                        -webkit-line-clamp: inherit;
+                        -webkit-box-orient: inherit;
+                        word-break: inherit;
+                    }
+                }
+            }
+        }
+
+        .product-color-tag {
+
+            @include respond-to ($screen991) {
+                position: relative;
+                padding-top: 9px;
+
+                &::before {
+                    content: '';
+                    border-top: 1px solid $bordercolor6;
+                    position: absolute;
+                    top: 0;
+                    width: 100vw;
+                    margin-left: calc(-50vw + 50%);
+                    z-index: -1;
+                }
+            }
+
+            .category-filter-lable {
+                font-weight: $font-semibold;
+                font-size: 14px;
+                line-height: 1.5;
+                letter-spacing: 0.48px;
+                text-transform: uppercase;
+            }
+
+            .filter-couleurs {
+                margin-bottom: 23px;
+
+                @include respond-to ($screen991) {
+                    min-width: 100%;
+                    max-width: 100%;
+                    padding: 0;
+                    margin-bottom: 14px;
+
+                    .category-filter-lable {
+                        display: none;
+                    }
+                }
+
+                .filter-item-cover {
+                    @include respond-to ($screen991) {
+                        margin-top: 0;
+                        justify-content: center;
+                    }
+
+                    .filter-form-row {
+                        max-width: inherit;
+                        flex: inherit;
+
+                        .filter-lable {
+                            background-color: transparent;
+                            font-weight: $font-regular;
+                            font-size: 14px;
+                            line-height: 1.5;
+                            color: $color1;
+                            text-transform: capitalize;
+
+                            @include respond-to ($screen991) {
+                                font-size: 0;
+                                padding: 10px;
+                                display: block;
+                            }
+                        }
+
+                        .filter-checkbox {
+                            &:checked {
+                                + .filter-lable {
+                                    background: $bgcolor1;
+                                    color: $color3;
+                                }
+                            }
+                        }
+                    }
+                }
+                @include respond-to ($screen991) {
+                    .filter-color-list {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .filter-product-social {
+                margin-bottom: 40px;
+
+                @include respond-to ($screen991) {
+                    min-width: 100%;
+                    max-width: 100%;
+                    padding: 0;
+                    margin-bottom: 23px;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    align-items: center;
+                }
+
+                .filter-product-partir {
+                    font-weight: $font-bold;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    letter-spacing: 0.48px;
+                    color: $color5;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .filter-est-cover {
+                    display: block;
+                    margin-bottom: 9px;
+                }
+
+                .filter-product-estimer {
+                    font-weight: $font-regular;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    letter-spacing: 0.48px;
+                    color: $color1;
+
+                    @include respond-to ($screen991) {
+                        margin-bottom: 0;
+                    }
+
+                    &:hover {
+                        color: $color5;
+                    }
+                }
+
+                .personnaliser-btn {
+                    min-width: 226px;
+                    margin-bottom: 10px;
+
+                    @include respond-to ($screen991) {
+                        min-width: fit-content;
+                        padding: 15px;
+                    }
+                }
+
+                .product-social-cover {
+                    display: flex;
+                    align-items: center;
+
+                    @include respond-to ($screen991) {
+                        justify-content: center;
+                        position: relative;
+                        padding: 14px 0;
+                        max-width: 100%;
+                        flex: 0 0 100%;
+
+                        &::before {
+                            content: '';
+                            border-top: 1px solid $bordercolor6;
+                            border-bottom: 1px solid $bordercolor6;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            width: 100vw;
+                            margin-left: calc(-50vw + 50%);
+                            z-index: -1;
+                        }
+                    }
+
+                    .product-social-share {
+                        display: block;
+                        margin-right: 12px;
+                        width: 18px;
+                        height: 20px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-image: url("data:image/svg+xml,%0A%3Csvg width='18' height='20' viewBox='0 0 18 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 0C14.2044 0 13.4413 0.316071 12.8787 0.87868C12.3161 1.44129 12 2.20435 12 3C12.0006 3.18815 12.0189 3.37583 12.0547 3.56055L4.93945 7.71094C4.39751 7.25184 3.71026 6.99992 3 7C2.20435 7 1.44129 7.31607 0.87868 7.87868C0.316071 8.44129 0 9.20435 0 10C0 10.7956 0.316071 11.5587 0.87868 12.1213C1.44129 12.6839 2.20435 13 3 13C3.70916 12.9986 4.3949 12.746 4.93555 12.2871L12.0547 16.4395C12.0189 16.6242 12.0006 16.8118 12 17C12 17.7956 12.3161 18.5587 12.8787 19.1213C13.4413 19.6839 14.2044 20 15 20C15.7956 20 16.5587 19.6839 17.1213 19.1213C17.6839 18.5587 18 17.7956 18 17C18 16.2044 17.6839 15.4413 17.1213 14.8787C16.5587 14.3161 15.7956 14 15 14C14.2902 14.0009 13.6037 14.2535 13.0625 14.7129L5.94531 10.5605C5.98108 10.3758 5.99939 10.1882 6 10C5.99939 9.81185 5.98108 9.62417 5.94531 9.43945L13.0605 5.28906C13.6025 5.74816 14.2897 6.00008 15 6C15.7956 6 16.5587 5.68393 17.1213 5.12132C17.6839 4.55871 18 3.79565 18 3C18 2.20435 17.6839 1.44129 17.1213 0.87868C16.5587 0.316071 15.7956 0 15 0Z' fill='%23356A61'/%3E%3C/svg%3E%0A");
+                    }
+
+                    .product-social-wishlist {
+                        display: flex;
+                        align-items: center;
+                        font-weight: $font-regular;
+                        font-size: 12px;
+                        line-height: 1.5;
+                        letter-spacing: 0.48px;
+                        color: #BDBDBD;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            margin-right: 5px;
+                            width: 22px;
+                            height: 20px;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-image: url("data:image/svg+xml,%0A%3Csvg width='22' height='20' viewBox='0 0 22 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.8038 0C12.6485 0 10.8992 2.27793 10.8992 2.27793C10.8992 2.27793 9.14986 0 5.99455 0C2.68338 0 0 2.68338 0 5.99455C0 10.5406 5.35368 14.946 6.84578 16.3379C8.56458 17.9401 10.8992 20 10.8992 20C10.8992 20 13.2338 17.9401 14.9526 16.3379C16.4447 14.946 21.7984 10.5406 21.7984 5.99455C21.7984 2.68338 19.115 0 15.8038 0Z' fill='%23BDBDBD'/%3E%3C/svg%3E%0A");
+                        }
+                    }
+                }
+            }
+
+            .filter-features {
+                @include respond-to ($screen991) {
+                    min-width: 100%;
+                    max-width: 100%;
+                    padding: 0;
+                }
+                
+                .filter-form-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                .filter-features-row {
+                    padding-right: 54px;
+
+                    @include respond-to ($screen500) {
+                        padding-right: 0;
+                        max-width: 100%;
+                        flex: 0 0 100%;
+                        margin-bottom: 10px;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+
+                        @include respond-to ($screen500) {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                .filter-features-list {
+                    display: flex;
+                    align-items: center;
+                    font-weight: $font-regular;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    letter-spacing: 0.48px;
+                    color: $color2;
+                    margin-bottom: 10px;
+
+                    img {
+                        margin-right: 14px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+// /product details
+
+// product secound section
+.product-secound-section {
+    margin-top: 62px;
+    margin-bottom: 51px;
+
+    @include respond-to ($screen991) {
+        margin-top: 23px;
+        margin-bottom: 23px;
+        background-color: $bgcolor7;
+    }
+
+    .category-bottom-section {
+        border-bottom: none;
+        border-radius: 20px;
+        padding: 50px 15px 54px;
+
+        @include respond-to ($screen991) {
+            display: block;
+            padding: 37px 0 41px;
+        }
+    }
+
+    .retour-catalogue-btn {
+        margin-top: 60px;
+        text-align: center;
+
+        @include respond-to ($screen991) {
+            margin-top: 36px;
+        }
+
+        .retour-catalogue-title {
+            font-weight: $font-regular;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0.48px;
+            color: $color1;
+            margin-bottom: 12px;
+        }
+
+        .retour-btn {
+            padding: 15px 26.5px;
+
+            @include respond-to ($screen991) {
+                padding: 8px 12px;
+            }
+        }
+    }
+}
+// /product secound section
+
+// you will also like
+.like-product {
+    margin-top: 51px;
+    margin-bottom: 99px;
+    padding: 0;
+    background-color: transparent;
+
+    @include respond-to ($screen991) {
+        margin-top: 23px;
+        margin-bottom: 53px;
+    }
+
+    .product-main-cover {
+        @include respond-to ($screen1199) {
+            padding-bottom: 32px;
+        }
+    }
+
+    .product-name {
+        .product-social {
+            @include respond-to ($screen1199) {
+                display: flex;
+                position: absolute;
+                bottom: -78px;
+                padding: 0;
+            }
+
+            .product-play {
+                @include respond-to ($minscreen1200) {
+                    display: none;
+                }
+            }
+
+            @include respond-to ($screen1199) {
+                .product-wishlist,
+                .product-share,
+                .product-play {
+                    background: $bgcolor1;
+                    opacity: 1;
+
+                    &:hover {
+                        background: $bgcolor5;
+                    }
+                }
+            }
+        }
+    }
+}
+// /you will also like
+
+// product bottom section
+.product-curabitur {
+    margin-top: 99px;
+    margin-bottom: 78px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    @extend .category-bottom-section;
+
+    @include respond-to ($screen991) {
+        display: block;
+        margin-top: 53px;
+        margin-bottom: 40px;
+    }
+}
+// /product bottom section
