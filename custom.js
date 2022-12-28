@@ -1,4 +1,7 @@
-
+sdffdfsdfsd
+sdff
+sdf
+ssdffs
 // global variable for animation start
 // var animation_images_location = document.location.origin + '/' + window.location.pathname.split('/')[1] + '/greet-and-green/wp-content/uploads/fpd_animation_image/' ;
 var animation_images_location = 'https://dev.greetandgreen.com/wp-content/uploads/fpd_animation_image/' ;
